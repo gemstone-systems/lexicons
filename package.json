@@ -1,0 +1,40 @@
+{
+  "name": "gemstone-lexicons",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "default": "./dist/src/index.js"
+    },
+    "./testing": {
+      "types": "./dist/src/testing/index.d.ts",
+      "default": "./dist/src/testing/index.js"
+    }
+  },
+  "peerDependencies": {
+    "@typespec/compiler": "^1.11.0"
+  },
+  "devDependencies": {
+    "@typelex/cli": "^0.4.0",
+    "@typelex/emitter": "^0.4.0",
+    "@types/node": "latest",
+    "@typescript-eslint/eslint-plugin": "^8.15.0",
+    "@typescript-eslint/parser": "^8.15.0",
+    "@typespec/compiler": "^1.11.0",
+    "eslint": "^9.15.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.3.3",
+    "typescript-eslint": "^8.59.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "test": "node --test 'dist/test**/*.test.js'",
+    "lint": "eslint src/ test/ --report-unused-disable-directives --max-warnings=0",
+    "lint:fix": "eslint . --report-unused-disable-directives --fix",
+    "format": "prettier .  --write",
+    "format:check": "prettier --check ."
+  },
+  "private": true
+}
