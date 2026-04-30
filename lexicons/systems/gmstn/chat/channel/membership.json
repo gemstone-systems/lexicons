@@ -20,7 +20,11 @@
           },
           "state": {
             "type": "string",
-            "enum": ["accepted", "rejected", "left"],
+            "enum": [
+              "accepted",
+              "rejected",
+              "left"
+            ],
             "description": "The current membership state."
           },
           "createdAt": {
@@ -34,7 +38,13 @@
             "description": "The timestamp when this membership was last updated."
           }
         },
-        "required": ["channel", "invite", "state", "createdAt", "updatedAt"]
+        "required": [
+          "channel",
+          "invite",
+          "state",
+          "createdAt",
+          "updatedAt"
+        ]
       },
       "description": "Record declaring the state of a user's channel membership."
     }

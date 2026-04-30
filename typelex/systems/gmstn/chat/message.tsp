@@ -1,4 +1,5 @@
 import "@typelex/emitter";
+import "../../../externals.tsp";
 
 namespace systems.gmstn.chat.message {
   @rec("tid")
@@ -79,7 +80,3 @@ namespace systems.gmstn.chat.message {
 
 // --- Externals ---
 
-@external
-namespace com.atproto.repo.strongRef {
-  model Main {}
-}

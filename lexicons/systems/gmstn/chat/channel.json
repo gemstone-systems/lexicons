@@ -30,7 +30,10 @@
             "description": "The timestamp when this channel was created."
           }
         },
-        "required": ["name", "createdAt"]
+        "required": [
+          "name",
+          "createdAt"
+        ]
       },
       "description": "Record declaring a conversation channel."
     }

@@ -1,0 +1,138 @@
+{
+  "lexicon": 1,
+  "id": "systems.gmstn.chat.message",
+  "defs": {
+    "main": {
+      "type": "record",
+      "key": "tid",
+      "record": {
+        "type": "object",
+        "properties": {
+          "channel": {
+            "type": "ref",
+            "ref": "com.atproto.repo.strongRef",
+            "description": "The channel this message was sent to. Must resolve to a systems.gmstn.chat.channel record."
+          },
+          "content": {
+            "type": "string",
+            "maxLength": 50000,
+            "minLength": 1,
+            "maxGraphemes": 5000,
+            "minGraphemes": 1,
+            "description": "The text content of the message."
+          },
+          "facets": {
+            "type": "array",
+            "items": {
+              "type": "ref",
+              "ref": "#facet"
+            },
+            "description": "(optional) Rich text annotations for the message content. Annotations are indexed by UTF-8 byte offsets into the content string."
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "datetime",
+            "description": "The timestamp when this message was created."
+          }
+        },
+        "required": [
+          "channel",
+          "content",
+          "createdAt"
+        ]
+      },
+      "description": "Record declaring a chat message. Written to the sender's repository by the AppView."
+    },
+    "facet": {
+      "type": "object",
+      "properties": {
+        "index": {
+          "type": "ref",
+          "ref": "#byteSlice",
+          "description": "The byte range this facet applies to."
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "type": "union",
+            "refs": [
+              "#mention",
+              "#link",
+              "#tag"
+            ],
+            "closed": true,
+            "description": "A feature applied to a byte range of text."
+          },
+          "description": "The features applied to this byte range."
+        }
+      },
+      "description": "A rich text annotation describing a range of the message content.",
+      "required": [
+        "index",
+        "features"
+      ]
+    },
+    "byteSlice": {
+      "type": "object",
+      "properties": {
+        "byteStart": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "The inclusive start byte offset."
+        },
+        "byteEnd": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "The exclusive end byte offset."
+        }
+      },
+      "description": "A byte range within the message content. byteStart is inclusive, byteEnd is exclusive.",
+      "required": [
+        "byteStart",
+        "byteEnd"
+      ]
+    },
+    "mention": {
+      "type": "object",
+      "properties": {
+        "did": {
+          "type": "string",
+          "format": "did",
+          "description": "The DID of the mentioned user."
+        }
+      },
+      "description": "A mention of another user.",
+      "required": [
+        "did"
+      ]
+    },
+    "link": {
+      "type": "object",
+      "properties": {
+        "uri": {
+          "type": "string",
+          "description": "The URI being linked to."
+        }
+      },
+      "description": "A hyperlink.",
+      "required": [
+        "uri"
+      ]
+    },
+    "tag": {
+      "type": "object",
+      "properties": {
+        "tag": {
+          "type": "string",
+          "maxLength": 6400,
+          "maxGraphemes": 640,
+          "description": "The tag value (without the leading #)."
+        }
+      },
+      "description": "A hashtag or topic tag.",
+      "required": [
+        "tag"
+      ]
+    }
+  }
+}
