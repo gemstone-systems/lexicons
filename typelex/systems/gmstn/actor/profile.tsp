@@ -1,4 +1,5 @@
 import "@typelex/emitter";
+import "../../../externals.tsp";
 
 namespace systems.gmstn.actor.profile {
 	/** A declaration of a Gemstone account profile. */
@@ -34,8 +35,3 @@ namespace systems.gmstn.actor.profile {
 }
 
 // --- Externals ---
-
-@external
-namespace com.atproto.label.defs {
-	model SelfLabels {}
-}

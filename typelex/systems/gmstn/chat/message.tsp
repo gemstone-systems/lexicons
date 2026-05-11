@@ -1,5 +1,6 @@
 import "@typelex/emitter";
 import "../../../externals.tsp";
+import "../../gmstn/richtext/facet.tsp";
 
 namespace systems.gmstn.chat.message {
   @rec("tid")
@@ -8,6 +9,12 @@ namespace systems.gmstn.chat.message {
     /** The channel this message was sent to. Must resolve to a systems.gmstn.chat.channel record. */
     @required
     channel: com.atproto.repo.strongRef.Main;
+
+    /** (optional) A reference to the message this is replying to. */
+    replyRef?: ReplyRef;
+
+    /** (optional) A reference to another message, such as a quoted or forwarded message. */
+    messageRef?: MessageRef;
 
     /** The text content of the message. */
     @minGraphemes(1)
@@ -18,63 +25,33 @@ namespace systems.gmstn.chat.message {
     content: string;
 
     /** (optional) Rich text annotations for the message content. Annotations are indexed by UTF-8 byte offsets into the content string. */
-    facets?: Facet[];
+    facets?: systems.gmstn.richtext.facet.Main[];
+
+    /** (optional) Attached media files. */
+    @maxItems(10)
+    attachments?: Blob<#["image/png", "image/jpeg", "image/gif", "video/mp4", "audio/mpeg"], 10000000>[];
 
     /** The timestamp when this message was created. */
     @required
     createdAt: datetime;
   }
 
-  /** A rich text annotation describing a range of the message content. */
-  model Facet {
-    /** The byte range this facet applies to. */
+  /** A reply reference linking to the root and parent messages of a thread. */
+  model ReplyRef {
+    /** The root message of the thread. Must resolve to a systems.gmstn.chat.message record. */
     @required
-    index: ByteSlice;
+    root: com.atproto.repo.strongRef.Main;
 
-    /** The features applied to this byte range. */
+    /** The direct parent message being replied to. Must resolve to a systems.gmstn.chat.message record. */
     @required
-    features: Feature[];
+    parent: com.atproto.repo.strongRef.Main;
   }
 
-  /** A byte range within the message content. byteStart is inclusive, byteEnd is exclusive. */
-  model ByteSlice {
-    /** The inclusive start byte offset. */
+  /** A reference to another message. */
+  model MessageRef {
+    /** The referenced message. Must resolve to a systems.gmstn.chat.message record. */
     @required
-    @minValue(0)
-    byteStart: integer;
-
-    /** The exclusive end byte offset. */
-    @required
-    @minValue(0)
-    byteEnd: integer;
-  }
-
-  /** A feature applied to a byte range of text. */
-  @closed
-  @inline
-  union Feature { Mention, Link, Tag };
-
-  /** A mention of another user. */
-  model Mention {
-    /** The DID of the mentioned user. */
-    @required
-    did: did;
-  }
-
-  /** A hyperlink. */
-  model Link {
-    /** The URI being linked to. */
-    @required
-    uri: string;
-  }
-
-  /** A hashtag or topic tag. */
-  model Tag {
-    /** The tag value (without the leading #). */
-    @required
-    @maxGraphemes(640)
-    @maxLength(6400)
-    tag: string;
+    message: com.atproto.repo.strongRef.Main;
   }
 }
 
