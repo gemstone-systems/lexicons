@@ -1,7 +1,7 @@
 import "@typelex/emitter";
-import "../../../externals.tsp";
+import "../../../../externals.tsp";
 
-namespace systems.gmstn.actor.getProfile {
+namespace systems.gmstn.api.actor.getProfile {
 	/** Get detailed profile view of an actor. Does not require auth, but contains more information if the requester is authenticated. */
 	@query
 	op main(
@@ -34,13 +34,9 @@ namespace systems.gmstn.actor.getProfile {
 		banner?: uri;
 
 		labels?: com.atproto.label.defs.Label[];
-
 		createdAt?: datetime;
 
 		/** Timestamp of when Prism indexed this profile. */
 		indexedAt?: datetime;
 	}
 }
-
-// --- Externals ---
-

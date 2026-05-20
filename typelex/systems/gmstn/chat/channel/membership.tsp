@@ -35,4 +35,3 @@ namespace systems.gmstn.chat.channel.membership {
 	}
 }
 
-// --- Externals ---

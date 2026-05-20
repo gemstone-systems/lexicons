@@ -1,0 +1,62 @@
+{
+  "lexicon": 1,
+  "id": "systems.gmstn.api.onboarding.getState",
+  "defs": {
+    "main": {
+      "type": "query",
+      "description": "Gets the relevant onboarding information for the requesting DID. Requires auth.",
+      "output": {
+        "encoding": "application/json",
+        "schema": {
+          "type": "ref",
+          "ref": "#onboardingState"
+        }
+      }
+    },
+    "onboardingState": {
+      "type": "object",
+      "properties": {
+        "updatedAt": {
+          "type": "string",
+          "format": "datetime"
+        },
+        "chat": {
+          "type": "object",
+          "properties": {
+            "onboardedAt": {
+              "type": "string",
+              "format": "datetime"
+            }
+          },
+          "required": [
+            "onboardedAt"
+          ]
+        },
+        "projects": {
+          "type": "object",
+          "properties": {
+            "onboardedAt": {
+              "type": "string",
+              "format": "datetime"
+            }
+          },
+          "required": [
+            "onboardedAt"
+          ]
+        },
+        "knowledge": {
+          "type": "object",
+          "properties": {
+            "onboardedAt": {
+              "type": "string",
+              "format": "datetime"
+            }
+          },
+          "required": [
+            "onboardedAt"
+          ]
+        }
+      }
+    }
+  }
+}
