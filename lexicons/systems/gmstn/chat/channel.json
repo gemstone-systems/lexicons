@@ -14,7 +14,11 @@
             "minLength": 1,
             "maxGraphemes": 100,
             "minGraphemes": 1,
-            "description": "The name of the channel."
+            "description": "The name of the channel. While it can be any string, it is likely to be converted to kebab-case where necessary, particularly in client applications."
+          },
+          "workspace": {
+            "type": "string",
+            "format": "at-uri"
           },
           "topic": {
             "type": "string",
@@ -32,6 +36,7 @@
         },
         "required": [
           "name",
+          "workspace",
           "createdAt"
         ]
       },

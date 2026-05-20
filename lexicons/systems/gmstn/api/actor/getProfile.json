@@ -8,14 +8,14 @@
       "parameters": {
         "type": "params",
         "properties": {
-          "actor": {
+          "identifier": {
             "type": "string",
             "format": "at-identifier",
             "description": "Handle or DID of the account to fetch profile of."
           }
         },
         "required": [
-          "actor"
+          "identifier"
         ]
       },
       "output": {
