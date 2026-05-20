@@ -25,5 +25,8 @@ namespace systems.gmstn.chat.workspace {
 		@minLength(1)
 		@maxLength(2000)
 		descriptionShort?: string;
+
+		@required
+		createdAt: datetime;
 	}
 }
