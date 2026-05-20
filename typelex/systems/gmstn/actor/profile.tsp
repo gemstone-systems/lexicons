@@ -33,4 +33,3 @@ namespace systems.gmstn.actor.profile {
 		createdAt?: datetime;
 	}
 }
-

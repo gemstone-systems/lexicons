@@ -18,4 +18,3 @@ namespace systems.gmstn.chat.channel.invite {
 		createdAt: datetime;
 	}
 }
-

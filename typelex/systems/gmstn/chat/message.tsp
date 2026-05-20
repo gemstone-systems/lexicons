@@ -57,3 +57,4 @@ namespace systems.gmstn.chat.message {
 		message: com.atproto.repo.strongRef.Main;
 	}
 }
+
