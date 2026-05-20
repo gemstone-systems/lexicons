@@ -3,9 +3,7 @@ import "@typelex/emitter";
 namespace systems.gmstn.api.onboarding.getState {
 	/** Gets the relevant onboarding information for the requesting DID. Requires auth. */
 	@query
-	op main(): OnboardingState;
-
-	model OnboardingState {
+	op main(): {
 		updatedAt?: datetime;
 		chat?: {
 			@required
@@ -19,5 +17,6 @@ namespace systems.gmstn.api.onboarding.getState {
 			@required
 			onboardedAt: datetime;
 		};
-	}
+	};
 }
+

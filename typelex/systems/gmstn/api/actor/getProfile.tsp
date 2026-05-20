@@ -6,7 +6,7 @@ namespace systems.gmstn.api.actor.getProfile {
 	@query
 	op main(
 		/** Handle or DID of the account to fetch profile of. */
-		@required actor: atIdentifier,
+		@required identifier: atIdentifier,
 	): ProfileView;
 
 	model ProfileView {
@@ -40,3 +40,4 @@ namespace systems.gmstn.api.actor.getProfile {
 		indexedAt?: datetime;
 	}
 }
+
