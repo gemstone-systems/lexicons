@@ -28,5 +28,9 @@ namespace systems.gmstn.chat.workspace {
 
 		@required
 		createdAt: datetime;
+
+		@required
+		host: atUri;
 	}
 }
+

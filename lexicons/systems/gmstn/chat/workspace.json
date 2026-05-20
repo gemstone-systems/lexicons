@@ -32,11 +32,16 @@
           "createdAt": {
             "type": "string",
             "format": "datetime"
+          },
+          "host": {
+            "type": "string",
+            "format": "at-uri"
           }
         },
         "required": [
           "name",
-          "createdAt"
+          "createdAt",
+          "host"
         ]
       }
     }
