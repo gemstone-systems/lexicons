@@ -11,7 +11,7 @@
           "identifier": {
             "type": "string",
             "format": "at-identifier",
-            "description": "Handle or DID of the account to fetch profile of."
+            "description": "Handle or DID of the account."
           }
         },
         "required": [

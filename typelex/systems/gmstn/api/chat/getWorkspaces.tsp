@@ -5,7 +5,7 @@ namespace systems.gmstn.api.chat.getWorkspaces {
 	/** Gets the list of chat workspaces that a user belongs to. Does not require auth. */
 	@query
 	op main(
-		/** Handle or DID of the account to fetch profile of. */
+		/** Handle or DID of the account. */
 		@required identifier: atIdentifier,
 	): Workspaces;
 
