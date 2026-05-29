@@ -16,11 +16,15 @@
             "type": "string",
             "format": "datetime",
             "description": "The timestamp when this channel was created."
+          },
+          "isPrivate": {
+            "type": "boolean"
           }
         },
         "required": [
           "serviceEndpoint",
-          "createdAt"
+          "createdAt",
+          "isPrivate"
         ]
       },
       "description": "Record declaring a Gemstone Geode."

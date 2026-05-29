@@ -7,20 +7,23 @@ namespace systems.gmstn.api.chat.getWorkspaces {
 	op main(
 		/** Handle or DID of the account to fetch profile of. */
 		@required identifier: atIdentifier,
-	): {
+	): Workspaces;
+
+	model Workspaces {
 		@required
 		count: integer;
 
 		@required
-		workspaces: {
-			@required name: string;
-			descriptionLong?: string;
-			descriptionShort?: string;
-			@required createdAt: string;
-			@required isOwner: boolean;
-			@required isAdmin: boolean;
-			@required uri: atUri;
-		}[];
-	};
-}
+		workspaces: Workspace[];
+	}
 
+	model Workspace {
+		@required name: string;
+		descriptionLong?: string;
+		descriptionShort?: string;
+		@required createdAt: string;
+		@required isOwner: boolean;
+		@required isAdmin: boolean;
+		@required uri: atUri;
+	}
+}

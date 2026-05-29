@@ -21,55 +21,63 @@
       "output": {
         "encoding": "application/json",
         "schema": {
-          "type": "object",
-          "properties": {
-            "count": {
-              "type": "integer"
-            },
-            "workspaces": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  },
-                  "descriptionLong": {
-                    "type": "string"
-                  },
-                  "descriptionShort": {
-                    "type": "string"
-                  },
-                  "createdAt": {
-                    "type": "string"
-                  },
-                  "isOwner": {
-                    "type": "boolean"
-                  },
-                  "isAdmin": {
-                    "type": "boolean"
-                  },
-                  "uri": {
-                    "type": "string",
-                    "format": "at-uri"
-                  }
-                },
-                "required": [
-                  "name",
-                  "createdAt",
-                  "isOwner",
-                  "isAdmin",
-                  "uri"
-                ]
-              }
-            }
-          },
-          "required": [
-            "count",
-            "workspaces"
-          ]
+          "type": "ref",
+          "ref": "#workspaces"
         }
       }
+    },
+    "workspaces": {
+      "type": "object",
+      "properties": {
+        "count": {
+          "type": "integer"
+        },
+        "workspaces": {
+          "type": "array",
+          "items": {
+            "type": "ref",
+            "ref": "#workspace"
+          }
+        }
+      },
+      "required": [
+        "count",
+        "workspaces"
+      ]
+    },
+    "workspace": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "descriptionLong": {
+          "type": "string"
+        },
+        "descriptionShort": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "isOwner": {
+          "type": "boolean"
+        },
+        "isAdmin": {
+          "type": "boolean"
+        },
+        "uri": {
+          "type": "string",
+          "format": "at-uri"
+        }
+      },
+      "required": [
+        "name",
+        "createdAt",
+        "isOwner",
+        "isAdmin",
+        "uri"
+      ]
     }
   }
 }

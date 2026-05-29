@@ -10,5 +10,8 @@ namespace systems.gmstn.geode {
 		/** The timestamp when this channel was created. */
 		@required
 		createdAt: datetime;
+
+		@required
+		isPrivate: boolean;
 	}
 }

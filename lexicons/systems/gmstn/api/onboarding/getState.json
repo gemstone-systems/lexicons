@@ -8,51 +8,43 @@
       "output": {
         "encoding": "application/json",
         "schema": {
-          "type": "object",
-          "properties": {
-            "updatedAt": {
-              "type": "string",
-              "format": "datetime"
-            },
-            "chat": {
-              "type": "object",
-              "properties": {
-                "onboardedAt": {
-                  "type": "string",
-                  "format": "datetime"
-                }
-              },
-              "required": [
-                "onboardedAt"
-              ]
-            },
-            "projects": {
-              "type": "object",
-              "properties": {
-                "onboardedAt": {
-                  "type": "string",
-                  "format": "datetime"
-                }
-              },
-              "required": [
-                "onboardedAt"
-              ]
-            },
-            "knowledge": {
-              "type": "object",
-              "properties": {
-                "onboardedAt": {
-                  "type": "string",
-                  "format": "datetime"
-                }
-              },
-              "required": [
-                "onboardedAt"
-              ]
-            }
-          }
+          "type": "ref",
+          "ref": "#onboardingState"
         }
       }
+    },
+    "onboardingState": {
+      "type": "object",
+      "properties": {
+        "updatedAt": {
+          "type": "string",
+          "format": "datetime"
+        },
+        "chat": {
+          "type": "ref",
+          "ref": "#onboardingStateObject"
+        },
+        "projects": {
+          "type": "ref",
+          "ref": "#onboardingStateObject"
+        },
+        "knowledge": {
+          "type": "ref",
+          "ref": "#onboardingStateObject"
+        }
+      }
+    },
+    "onboardingStateObject": {
+      "type": "object",
+      "properties": {
+        "onboardedAt": {
+          "type": "string",
+          "format": "datetime"
+        }
+      },
+      "required": [
+        "onboardedAt"
+      ]
     }
   }
 }
