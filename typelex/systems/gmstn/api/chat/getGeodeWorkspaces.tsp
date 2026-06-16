@@ -21,7 +21,7 @@ namespace systems.gmstn.api.chat.getGeodeWorkspaces {
 		@required name: string;
 		descriptionLong?: string;
 		descriptionShort?: string;
-		@required createdAt: string;
+		@required createdAt: datetime;
 		@required isOwner: boolean;
 		@required isAdmin: boolean;
 		@required uri: atUri;
