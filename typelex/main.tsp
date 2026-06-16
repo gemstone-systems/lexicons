@@ -1,8 +1,8 @@
 import "@typelex/emitter";
 
 import "./systems/gmstn/geode.tsp";
-import "./systems/gmstn/chat/channel/invite.tsp";
-import "./systems/gmstn/chat/channel/membership.tsp";
+import "./systems/gmstn/chat/workspace/invite.tsp";
+import "./systems/gmstn/chat/workspace/membership.tsp";
 import "./systems/gmstn/chat/channel.tsp";
 import "./systems/gmstn/chat/message.tsp";
 import "./systems/gmstn/chat/workspace.tsp";

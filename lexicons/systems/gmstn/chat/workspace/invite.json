@@ -1,6 +1,6 @@
 {
   "lexicon": 1,
-  "id": "systems.gmstn.chat.channel.invite",
+  "id": "systems.gmstn.chat.workspace.invite",
   "defs": {
     "main": {
       "type": "record",
@@ -13,10 +13,10 @@
             "format": "did",
             "description": "The recipient of the invite."
           },
-          "channel": {
-            "type": "ref",
-            "ref": "com.atproto.repo.strongRef",
-            "description": "The channel that this invite is for. Must resolve to a systems.gmstn.chat.channel record."
+          "workspace": {
+            "type": "string",
+            "format": "at-uri",
+            "description": "The workspace that this invite is for. Must resolve to a systems.gmstn.workspace record."
           },
           "createdAt": {
             "type": "string",
@@ -26,11 +26,11 @@
         },
         "required": [
           "recipient",
-          "channel",
+          "workspace",
           "createdAt"
         ]
       },
-      "description": "Record declaring a channel invite."
+      "description": "Record declaring a workspace invite."
     }
   }
 }
