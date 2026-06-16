@@ -1,0 +1,37 @@
+{
+  "lexicon": 1,
+  "id": "systems.gmstn.api.chat.getInvites",
+  "defs": {
+    "main": {
+      "type": "query",
+      "description": "Requires auth. Gets the list of all possible workspace invites that reference the authed user's DID."
+    },
+    "workspaceInvite": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "descriptionLong": {
+          "type": "string"
+        },
+        "descriptionShort": {
+          "type": "string"
+        },
+        "uri": {
+          "type": "string",
+          "format": "at-uri"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "datetime"
+        }
+      },
+      "required": [
+        "name",
+        "uri",
+        "createdAt"
+      ]
+    }
+  }
+}
