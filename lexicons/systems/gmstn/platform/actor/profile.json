@@ -1,6 +1,6 @@
 {
   "lexicon": 1,
-  "id": "systems.gmstn.actor.profile",
+  "id": "systems.gmstn.platform.actor.profile",
   "defs": {
     "main": {
       "type": "record",

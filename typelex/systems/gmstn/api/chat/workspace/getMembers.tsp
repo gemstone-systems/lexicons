@@ -23,7 +23,7 @@ namespace systems.gmstn.api.chat.workspace.getMembers {
 
 	model WorkspaceWithMembers {
 		@required workspace: atUri;
-		@required members: systems.gmstn.api.actor.getProfile.ProfileView[];
+		@required
+		members: systems.gmstn.api.platform.actor.getProfile.ProfileView[];
 	}
 }
-

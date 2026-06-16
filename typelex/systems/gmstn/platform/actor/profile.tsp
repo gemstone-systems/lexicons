@@ -1,7 +1,7 @@
 import "@typelex/emitter";
-import "../../../externals.tsp";
+import "../../../../externals.tsp";
 
-namespace systems.gmstn.actor.profile {
+namespace systems.gmstn.platform.actor.profile {
 	/** A declaration of a Gemstone account profile. */
 	@rec("literal:self")
 	model Main {
@@ -33,3 +33,4 @@ namespace systems.gmstn.actor.profile {
 		createdAt?: datetime;
 	}
 }
+

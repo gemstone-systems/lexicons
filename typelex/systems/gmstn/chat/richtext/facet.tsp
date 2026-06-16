@@ -1,6 +1,6 @@
 import "@typelex/emitter";
 
-namespace systems.gmstn.richtext.facet {
+namespace systems.gmstn.chat.richtext.facet {
   /** A rich text annotation describing a range of text content. */
   model Main {
     /** The byte range this facet applies to. */

@@ -67,7 +67,7 @@
           "type": "array",
           "items": {
             "type": "ref",
-            "ref": "systems.gmstn.api.actor.getProfile#profileView"
+            "ref": "systems.gmstn.api.platform.actor.getProfile#profileView"
           }
         }
       },

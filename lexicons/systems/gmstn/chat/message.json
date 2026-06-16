@@ -35,7 +35,7 @@
             "type": "array",
             "items": {
               "type": "ref",
-              "ref": "systems.gmstn.richtext.facet"
+              "ref": "systems.gmstn.chat.richtext.facet"
             },
             "description": "(optional) Rich text annotations for the message content. Annotations are indexed by UTF-8 byte offsets into the content string."
           },

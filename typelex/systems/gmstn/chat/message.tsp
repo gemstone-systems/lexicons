@@ -1,6 +1,6 @@
 import "@typelex/emitter";
 import "../../../externals.tsp";
-import "../../gmstn/richtext/facet.tsp";
+import "./richtext/facet.tsp";
 
 namespace systems.gmstn.chat.message {
 	/** Record declaring a chat message. Written to the sender's repository by the AppView. */
@@ -25,7 +25,7 @@ namespace systems.gmstn.chat.message {
 		content: string;
 
 		/** (optional) Rich text annotations for the message content. Annotations are indexed by UTF-8 byte offsets into the content string. */
-		facets?: systems.gmstn.richtext.facet.Main[];
+		facets?: systems.gmstn.chat.richtext.facet.Main[];
 
 		/** (optional) Attached media files. */
 		@maxItems(10)
@@ -57,4 +57,3 @@ namespace systems.gmstn.chat.message {
 		message: com.atproto.repo.strongRef.Main;
 	}
 }
-

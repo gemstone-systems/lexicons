@@ -1,6 +1,6 @@
 import "@typelex/emitter";
 
-namespace systems.gmstn.api.onboarding.getState {
+namespace systems.gmstn.api.platform.onboarding.getState {
 	/** Gets the relevant onboarding information for the requesting DID. Requires auth. */
 	@query
 	op main(): OnboardingState;
@@ -13,7 +13,7 @@ namespace systems.gmstn.api.onboarding.getState {
 	}
 
 	model OnboardingStateObject {
-			@required
-			onboardedAt: datetime;
-		}
+		@required
+		onboardedAt: datetime;
+	}
 }
