@@ -1,12 +1,12 @@
 import "@typelex/emitter";
 import "../../../../externals.tsp";
 
-namespace systems.gmstn.api.chat.getWorkspaces {
-	/** Given a list of workspace URIs, returns the metadata regarding those workspaces. Does not require auth. */
+namespace systems.gmstn.api.chat.getActorWorkspaces {
+	/** Gets the list of chat workspaces that a user belongs to. Does not require auth. */
 	@query
 	op main(
-		/** URIs of workspaces to be resolved. */
-		@required workspaces: atUri[],
+		/** Handle or DID of the account. */
+		@required identifier: atIdentifier,
 	): Workspaces;
 
 	model Workspaces {
@@ -27,4 +27,3 @@ namespace systems.gmstn.api.chat.getWorkspaces {
 		@required uri: atUri;
 	}
 }
-
