@@ -1,8 +1,8 @@
 import "@typelex/emitter";
 import "../../../../externals.tsp";
 
-namespace systems.gmstn.api.chat.getGeodeWorkspaces {
-	/** Gets the list of chat workspaces associated with a Geode. Does not require auth. */
+namespace systems.gmstn.api.chat.getHostWorkspaces {
+	/** Gets the list of chat workspaces associated with a host (Geode). Does not require auth. */
 	@query
 	op main(
 		/** Domain of the Geode in question, e.g. "geode.gmstn.systems" */
@@ -27,3 +27,4 @@ namespace systems.gmstn.api.chat.getGeodeWorkspaces {
 		@required uri: atUri;
 	}
 }
+

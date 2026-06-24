@@ -13,6 +13,7 @@ import "./systems/gmstn/api/platform/actor/getProfile.tsp";
 import "./systems/gmstn/api/platform/onboarding/getState.tsp";
 import "./systems/gmstn/api/chat/getWorkspaces.tsp";
 import "./systems/gmstn/api/chat/getInvites.tsp";
-import "./systems/gmstn/api/chat/getGeodeWorkspaces.tsp";
+import "./systems/gmstn/api/chat/getHostWorkspaces.tsp";
 import "./systems/gmstn/api/chat/getActorWorkspaces.tsp";
 import "./systems/gmstn/api/chat/workspace/getMembers.tsp";
+
